@@ -101,8 +101,10 @@ header ul li a:hover{
 
 .form #mensagem{
     margin-top: 20px;
+    resize: none;
     width: 65%;
-    padding: 45px 5px;
+    height: 90px;
+    padding: 5px;
     border: none;
     border-radius: 5px 5px 5px 5px;
 }
