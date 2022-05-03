@@ -104,7 +104,7 @@ header ul li a:hover{
     resize: none;
     width: 65%;
     height: 90px;
-    padding: 5px;
+    padding: 5px 10px;
     border: none;
     border-radius: 5px 5px 5px 5px;
 }
