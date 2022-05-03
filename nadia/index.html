@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" integrity="sha384-/frq1SRXYH/bSyou/HUp/hib7RVN1TawQYja658FEOodR/FQBKVqT9Ol+Oz3Olq5" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Nadia Coelho</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo Nádia Coelho">
+        </div>
+        <ul>
+            <li>
+                <a target="_blank" href="https://github.com/nadiacoelhoc">github</a>
+            </li>
+            <li>
+                <a target="_blank" href="mailto:nadia.coelhoc@gmail.com">email</a>
+            </li>
+            <li>
+                <a target="_blank" href="https://wa.me/+351913903212">whatsapp</a>
+            </li>
+        </ul>
+    </header>
+    <main>
+        <section class="container">
+            <div class="name">
+                <h1>Nádia Coelho</h1>
+                <h5>Front-End Developer Junior</h5>
+            </div>
+
+            <div onclick="displayAbout()" id="arrow">
+                <i id="animation" class="fa-solid fa-caret-down"></i>
+            </div>
+
+            <div id="about">
+                <p>Bacharel em Ciências Contábeis, atuei na área Administrativa/Financeira por 5 anos. Já atuei na modelagem de processos na ferramenta Pipefy, como: processo de contas a pagar, processo de compras, processo de reembolsos e viagens. Atualmente estou em transição de carreira para área de tecnologia, com meus estudos voltados para Front-End. Sou motivada por desafios, e estou sempre em busca de novos conhecimentos.</p>
+            </div>
+
+            <div class="form">
+                <div>
+                    <p>Deixe seu contato</p>
+                </div>
+
+                <div>
+                    <input id="mensagem" type="text" placeholder="Deixe uma mensagem">
+                    <input id="email" type="text" placeholder="Seu melhor email :)">
+                    <button onclick="sendMessage()">Enviar!</button>
+                </div>
+
+                <div id="thanks" class="thanksmessage">
+                    <p>Obrigada pela mensagem! :)</p>
+                </div>
+                
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function displayAbout(){
+            var arrow = document.getElementById('animation');
+            arrow.classList.toggle('rotate');
+            var display = document.getElementById('about');
+            display.classList.toggle('active');
+        }
+
+        function sendMessage(){
+            const headers = new Headers()
+                headers.append("Content-Type", "application/json")
+
+            const body = {
+                "email": document.getElementById('email').value,
+                "message": document.getElementById('mensagem').value
+            }
+
+            const options = {
+                method: "POST",
+                headers,
+                mode: "cors",
+                body: JSON.stringify(body),
+            }
+
+        fetch("https://eobyhe34122pv7o.m.pipedream.net", options)
+            var thanks = document.getElementById('thanks');
+            thanks.classList.remove('thanksmessage');
+        }
+    </script>
+</body>
+</html>
