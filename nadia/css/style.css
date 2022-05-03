@@ -99,7 +99,7 @@ header ul li a:hover{
     display:none;
 }
 
-.form #mensagem{
+.form #message{
     margin-top: 20px;
     resize: none;
     width: 65%;
